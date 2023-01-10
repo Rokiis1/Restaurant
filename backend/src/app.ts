@@ -17,7 +17,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Define routes
-app.use('/recipes', recipesRouter);
+app.use("api/v1/recipes", recipesRouter);
 
 // Catch 404 and forward to error handler
 app.use((req: Request, res: Response, next: NextFunction) => {
