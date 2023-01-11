@@ -29,14 +29,16 @@ connect()
   });
 
 // Close the database connection on exit
-process.on('SIGINT', () => {
-  close()
-    .then(() => {
-      console.log('Database connection closed');
-      process.exit();
-    })
-    .catch((err: Error) => {
-      console.error(err);
-      process.exit(1);
-    });
-});
+if (!process.env.IS_TEST) {
+  process.on('SIGINT', () => {
+    close()
+      .then(() => {
+        console.log('Database connection closed');
+        process.exit(0);
+      })
+      .catch((err: Error) => {
+        console.error(err);
+        process.exit(1);
+      });
+  });
+}

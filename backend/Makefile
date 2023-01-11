@@ -1,14 +1,14 @@
 install:
-	pnpm install
+	npm install
 
 start:
-	pnpm run start
+	npm run start
 
 lint:
-	pnpm run lint
+	npm run lint
 
 test:
-	pnpm run test
+	npm run test
 
 build:
-	pnpm run build
+	npm run build
