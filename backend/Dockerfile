@@ -7,10 +7,10 @@ RUN adduser -D myuser
 WORKDIR /usr/src/app
 
 # Copy package*.json* and package-lock.json
-COPY package*.json* ./
+COPY **/package.json **/package-lock.json ./
 
 # Install production dependencies
-RUN npm ci --only=production
+RUN npm install --only=production
 
 # Copy app source code
 COPY . .
